@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfólio</title>
+</head>
+
+<body>
+    <div class="particulas"> </div>
+
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">projetos</a>
+            </li>
+            <li>
+                <a href="#contato" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="img/arthur.jpeg" alt="Foto de arthur" class="foto-perfil">
+        <h1>Arthur Rosa</h1>
+        <p class="sub-titulo">Desenvolvedor Front-End</p>
+    </main>
+
+    <section id="Sobre" class="sobre">
+        <h2 class="sobre-titulo"> Sobre mim </h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo"> Olá! Meu nome é Arthur Rosa, sou um desenvolvedor
+                front-end apaixonado por criar experiências digitais incríveis.
+                Com habilidades em HTML, CSS e JavaScript, estou sempre em busca
+                de novos desafios para aprimorar minhas habilidades e contribuir
+                para projetos inovadores. Adoro trabalhar em equipe e estou sempre
+                aberto a aprender novas tecnologias. Vamos construir algo incrível
+                juntos!</p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo"> Meus Projetos </h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="img/projeto1.jpg" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Hamburgueria</h3>
+                    <p class="paragrafo-projeto">Site de uma hamburgueria com cardápio 
+                        interativo e sistema de pedidos online.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/projeto2.jpg" alt="projeto 2" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">cafeteria</h3>
+                    <p class="paragrafo-projeto">Site de uma cafeteria com cardápio digital e sistema de pedidos online.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/projeto3.jpg" alt="projeto 3" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">projeto android</h3>
+                    <p class="paragrafo-projeto">Site de um projeto android com interface moderna e funcionalidades interativas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contato" onsubmit="enviarwhats(event)">
+            <div class="grupo-form">
+                <input placeholder="nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="digite sua mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-enviar">Enviar WhatsApp</button>
+        </form>
+    </section>
+
+
+    <script>
+        function enviarwhats(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5561991199563';
+
+            const texto = `Olá! Meu nome é ${nome}. ${mensagem}`;
+            const msgformatada = encodeURIComponent(texto);
+
+            
+            const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${msgformatada}`;
+
+              
+            window.location.href = url;
+ 
+        }
+    </script>
+
+</body>
+
+</html>
