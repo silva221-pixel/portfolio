@@ -53,34 +53,37 @@
         <div class="projetos-caixa">
 
             <div class="projetos-card">
-                <img src="img/projeto1.jpg" alt="projeto 1" class="projetos-imagem">
+                <img src="img/projeto1.jpg" alt="projeto 1" class="projetos-imagem" onclick="abrirLightbox(this)">
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">Hamburgueria</h3>
-                    <p class="paragrafo-projeto">Site de uma hamburgueria com cardápio 
+                    <p class="paragrafo-projeto">Site de uma hamburgueria com cardápio
                         interativo e sistema de pedidos online.</p>
                 </div>
             </div>
 
             <div class="projetos-card">
-                <img src="img/projeto2.jpg" alt="projeto 2" class="projetos-imagem">
+                <img src="img/projeto2.jpg" alt="projeto 2" class="projetos-imagem" onclick="abrirLightbox(this)">
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">cafeteria</h3>
-                    <p class="paragrafo-projeto">Site de uma cafeteria com cardápio digital e sistema de pedidos online.</p>
+                    <p class="paragrafo-projeto">Site de uma cafeteria com cardápio digital e sistema de pedidos online.
+                    </p>
                 </div>
             </div>
 
             <div class="projetos-card">
-                <img src="img/projeto3.jpg" alt="projeto 3" class="projetos-imagem">
+                <img src="img/projeto3.jpg" alt="projeto 3" class="projetos-imagem" onclick="abrirLightbox(this)">
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">projeto android</h3>
-                    <p class="paragrafo-projeto">Site de um projeto android com interface moderna e funcionalidades interativas.</p>
+                    <p class="paragrafo-projeto">Site de um projeto android com interface moderna e funcionalidades
+                        interativas.</p>
                 </div>
             </div>
             <div class="projetos-card">
                 <img src="img/projeto4.jpg" alt="projeto 4" class="projetos-imagem">
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">projeto confeitaria</h3>
-                    <p class="paragrafo-projeto">Site de um projeto de confeitaria com cardápio digital e sistema de pedidos online.</p>
+                    <p class="paragrafo-projeto">Site de um projeto de confeitaria com cardápio digital e sistema de
+                        pedidos online.</p>
                 </div>
             </div>
         </div>
@@ -101,6 +104,13 @@
         </form>
     </section>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="fecharLightbox()">
+        <img id="lightbox-img" src="">
+        <span class="fechar">&times;</span>
+    </div>
+
+
 
     <script>
         function enviarwhats(event) {
@@ -113,13 +123,28 @@
             const texto = `Olá! Meu nome é ${nome}. ${mensagem}`;
             const msgformatada = encodeURIComponent(texto);
 
-            
+
             const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${msgformatada}`;
 
-              
+
             window.location.href = url;
- 
+
         }
+
+        <script>
+function abrirLightbox(img) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    lightboxImg.src = img.src;
+    lightbox.style.display = "flex";
+}
+
+function fecharLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
     </script>
 
 </body>
