@@ -291,3 +291,21 @@ h1 {
         opacity: 1;
     }
 }
+
+.nav {
+    position: absolute;
+    top: 50%;
+    font-size: 60px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+}
+
+.nav.esquerda {
+    left: 30px;
+}
+
+.nav.direita {
+    right: 30px;
+}
